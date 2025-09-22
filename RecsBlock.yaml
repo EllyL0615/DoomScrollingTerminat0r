@@ -1,5 +1,5 @@
 proxies: 
-  - name: "DIRECT Conn"
+  - name: "直连"
     type: direct
     udp: true
 
