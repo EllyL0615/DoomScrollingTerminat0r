@@ -1,0 +1,16 @@
+# proxies: 
+#   - name: "DIRECT"
+#     type: direct
+#     udp: true
+
+mode: rule
+mixed-port: 7890
+allow-lan: true
+
+rules:
+  - DOMAIN-KEYWORD,rec.xiaohongshu,REJECT
+
+
+
+
+

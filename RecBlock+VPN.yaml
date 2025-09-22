@@ -1,0 +1,64 @@
+proxy-providers:
+  飞狗:
+    url: "https://fg88.whtjdasha.com/api/v1/client/subscribe?token=9a574c1c20c8f053656e8335d3001053"
+    type: http
+    interval: 86400
+    health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
+    override:
+      additional-prefix: "[飞狗]"
+
+  FlyingBird:
+    url: "https://fba02.fbsubcn01.cc:2096/flydsubal/ahl6c5dfpekxiqrg?clash=1&extend=1"
+    type: http
+    interval: 86400
+    health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
+    override:
+      additional-prefix: "[FlyingBird]"
+
+proxies: 
+  - name: "直连"
+    type: direct
+    udp: true
+
+mode: rule
+mixed-port: 7890
+allow-lan: true
+
+proxy-groups:
+  - name: 默认
+    type: select
+    proxies: [直连,全部节点,自动选择]
+
+  - name: 全部节点
+    type: select
+    include-all: true
+    exclude-type: direct
+
+  - name: 自动选择
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    tolerance: 10
+
+rules:
+  - DOMAIN-KEYWORD,rec.xiaohongshu,REJECT
+  - MATCH,全部节点
+
+# rule-providers:
+#   google:
+#     type: http
+#     path: ./rule1.yaml
+#     url: "https://raw.githubusercontent.com/../Google.yaml"
+#     interval: 600
+#     proxy: DIRECT
+#     behavior: classical
+#     format: yaml
+#     size-limit: 0
+#     payload:
+
+#       - 'DOMAIN-SUFFIX,google.com'
+
+
+
+
+
