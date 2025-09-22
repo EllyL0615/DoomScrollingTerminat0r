@@ -9,7 +9,7 @@ allow-lan: true
 
 rules:
   - DOMAIN-KEYWORD,rec.xiaohongshu,REJECT
-  - MATCH,DIRECT
+  - MATCH,直连
 
 
 
