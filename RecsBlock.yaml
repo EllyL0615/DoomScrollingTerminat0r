@@ -1,5 +1,5 @@
 proxies: 
-  - name: "直连"
+  - name: "DIRECT"
     type: direct
     udp: true
 
@@ -9,7 +9,6 @@ allow-lan: true
 
 rules:
   - DOMAIN-KEYWORD,rec.xiaohongshu,REJECT
-  # - MATCH,直连
 
 
 
