@@ -41,7 +41,7 @@ proxy-groups:
     tolerance: 10
 
 rules:
-  - 'DOMAIN-KEYWORD,rec.xiaohongshu.*video,REJECT'
+  - 'DOMAIN-KEYWORD,rec.xiaohongshu,REJECT'
   - 'DOMAIN-SUFFIX,baidu.com,REJECT'
 
 # rule-providers:
@@ -57,4 +57,5 @@ rules:
 #     payload:
 
 #       - 'DOMAIN-SUFFIX,google.com'
+
 
