@@ -1,11 +1,11 @@
-proxies: 
-  - name: "Dir3ctConn"
-    type: direct
-    udp: true
-
 mode: rule
 mixed-port: 7890
 allow-lan: true
+
+proxies:
+- name: "direct"
+  type: direct
+  udp: true
 
 rules:
   - DOMAIN-KEYWORD,rec.xiaohongshu,REJECT
